@@ -1,0 +1,24 @@
+.bar {
+    width:100%;
+    background: gray;
+};
+
+.foreground {
+    z-index: 2;
+}
+
+.background {
+    z-index: 1;
+}
+
+.top {
+}
+
+.bottom {
+}
+
+.brand {
+    background: red;
+    height: 50px;
+    width: 100px;
+}
