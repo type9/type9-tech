@@ -41,7 +41,7 @@ export default function Index({
 
   //PAGE CONTEXT - Handles the global context data
   const [cur, handle_section_change] = useState(0);
-  const [section, set_section] = useState(0);
+  const [section, set_section] = useState(-1);
 
   function navigate_to(section: number) { //change current section
     handle_section_change(section);
@@ -54,6 +54,9 @@ export default function Index({
     set_section: set_section,
     navigate_to: navigate_to
   }
+  
+  let scroller_toggle = styles.scroller //hides scrolling if on landing
+  if(section === -1){scroller_toggle = styles.scroller_hide}
 
   return (
     <Layout>

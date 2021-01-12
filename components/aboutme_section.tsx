@@ -16,13 +16,12 @@ function Brand(){
 export default function AboutMeSection(){
     return (
         <div id="about_me" className={styles.aboutme_section}>
-            <div className={styles.brand_container}>
-                <Brand />
-            </div>
             <div className={styles.header_container}>
                 <h1 className={styles.h1}>About Me</h1>
             </div>
-            <hr></hr>
+            <div className={styles.brand_container}>
+                <Brand />
+            </div>
             <div className={styles.tagline_container}>
                 <p className={styles.tagline}>
                     I'm an aspiring software engineer from San Francisco. Currently seeking internships for Summer 2021.

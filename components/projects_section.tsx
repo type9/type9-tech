@@ -109,7 +109,6 @@ export default function ProjectSection({
             <div className={styles.header_container}>
                 <h1 className={styles.h1}>Projects</h1>
             </div>
-            <hr></hr>
             <div className={styles.projects}>
                 {populate()}
             </div>

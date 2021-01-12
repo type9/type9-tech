@@ -1,5 +1,5 @@
 .project_container {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 .header_container {
@@ -15,7 +15,7 @@
 }
 
 .projects {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .header {
     display: flex;

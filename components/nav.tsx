@@ -1,6 +1,7 @@
 import styles from '../styles/Nav.module.css';
 import { useContext, cloneElement } from 'react';
 import { PageContext } from '../components/page_context';
+import Landing from '../components/landing';
 
 function NavItem({
     name,
@@ -46,8 +47,14 @@ export default function Nav(){
             );
         });
     }
+
+    let landing:boolean = true //checks to see if we're on landing page
+    if(page.section >= 0){landing = false};
     return (
         <div className={styles.nav_container}>
+            <Landing
+                infocus={landing}
+            />
             <nav className={styles.nav}>
                 <ul className={styles.nav_list}>
                     {populate_sections()}

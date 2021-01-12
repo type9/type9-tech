@@ -12,6 +12,14 @@
   overflow: scroll;
 }
 
+.scroller_hide {
+  width: 600px;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  overflow: scroll;
+  display:none;
+}
+
 .scroller::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
