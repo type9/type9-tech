@@ -7,30 +7,53 @@ import styles from '../styles/Project.module.css';
 //DATA
 
 interface ProjectTemplate{
-    id:number
-    title:string
-    preview_url:string
-    description:string
-    medium_url:string | null
-    figma_url:string | null
-    github_url:string | null
+    id: number
+    title: string
+    preview_url: string
+    description: string
+    media_links: {}
+}
+
+function MediaLink({
+    url,
+    src
+}: {
+    url: string
+    src: string
+}) {
+    return (
+        <a href={url} className={styles.media_link}>
+            <img src={src} className={styles.media_icon}></img>
+        </a>
+    );
 }
 
 function Project({
     title,
-    preview_url,
+    preview_url, //TODO: Implement video preview (either gif or youtube)
     description,
-    medium_url,
-    figma_url,
-    github_url
+    media_links
 }: {
-    title:string
-    preview_url:string
-    description:string
-    medium_url:string | null
-    figma_url:string | null
-    github_url:string | null
+    title: string
+    preview_url: string
+    description: string
+    media_links: {}
 }){
+    function populate_links(){
+        let valid_media = ['medium', 'github', 'figma'] //TODO: Make this dynamic
+
+        return valid_media.map(media => {
+            if(media_links[media]){
+                return cloneElement(
+                    <MediaLink
+                        url={media_links[media]}
+                        src={"/" + media + ".svg"}
+                    />
+                );
+            }
+        });
+    }
+
     return (
         <section className={styles.project_container}>
             <header className={styles.header}>
@@ -46,6 +69,16 @@ function Project({
                 <p className={styles.description_text}>
                     {description}
                 </p>
+            </div>
+            <div className={styles.medialink_container}>
+                <div className={styles.links}>
+                    {populate_links()}
+                </div>
+            </div>
+            <div className={styles.readmore_container}>
+                <a href={media_links['medium']}>
+                    <text className={styles.readmore_text}>READ MORE &#8594;</text>
+                </a>
             </div>
         </section>
     );
@@ -63,12 +96,10 @@ export default function ProjectSection({
                     title={project.title}
                     preview_url={project.preview_url}
                     description={project.description}
-                    medium_url={project.medium_url}
-                    figma_url={project.figma_url}
-                    github_url={project.figma_url}
+                    media_links={project.media_links}
                 />
             );
-        })
+        });
     }
     return (
         <div className={styles.project_section}>

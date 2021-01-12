@@ -4,8 +4,10 @@
         "title": "TWIST:ALPHA",
         "preview_url": "",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-        "medium_url": null,
-        "figma_url": null,
-        "github_url": null
+        "media_links": {
+            "medium": "https://medium.com",
+            "figma": "https://figma.com",
+            "github": "https://github.com"
+        }
     }
 ]}
