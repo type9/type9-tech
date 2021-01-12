@@ -1,5 +1,5 @@
 .project_container {
-    width:500px;
+    margin-bottom: 100px;
 }
 
 .header {
@@ -41,7 +41,6 @@
 }
 
 .media {
-    width:500px;
     height:225px;
     border: 0.5px solid #BABABA;
 }
@@ -56,9 +55,6 @@
     font-size: 14;
     letter-spacing: 1px;
     font-weight: light;
-}
-
-.medialink_container {
 }
 
 .links {
@@ -86,6 +82,7 @@
 }
 
 .readmore_text:hover{
-    opacity:0.7;
+    color: #2E0101;
+    margin-left: 3px;
     transition-duration: 0.1s;
 }

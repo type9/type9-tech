@@ -1,5 +1,6 @@
 //IMPORTS
 import { cloneElement } from 'react';
+import ReactScrollDetect, { DetectSection } from 'react-scroll-detect';
 
 //STYLES
 import styles from '../styles/Project.module.css';
@@ -55,7 +56,7 @@ function Project({
     }
 
     return (
-        <section className={styles.project_container}>
+        <section id={"projects_" + title} className={styles.project_container}>
             <header className={styles.header}>
                 <div className={styles.foreground}>
                     <div className={styles.barspacer}>
@@ -77,7 +78,7 @@ function Project({
             </div>
             <div className={styles.readmore_container}>
                 <a href={media_links['medium']}>
-                    <text className={styles.readmore_text}>READ MORE &#8594;</text>
+                    <p className={styles.readmore_text}>READ MORE &#8594;</p>
                 </a>
             </div>
         </section>
@@ -102,7 +103,7 @@ export default function ProjectSection({
         });
     }
     return (
-        <div className={styles.project_section}>
+        <div id="projects" className={styles.project_section}>
             <div className={styles.projects}>
                 {populate()}
             </div>

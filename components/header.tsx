@@ -17,9 +17,16 @@ function Brand(){
 
 function Tracker(){
     const page = useContext(PageContext);
+    function getShort(){ //caculates a 2 letter shorthand for display
+        let section_name = page.section_choices[page.section];
+        if(!section_name){
+            return "NULL";
+        }
+        return section_name.substring(0, 2);
+    }
     return (
         <div className={styles.tracker}>
-            <div className={styles.tracker_text}>{page.section}</div>
+            <div className={styles.tracker_text}>{`0${page.section + 1} | ${getShort().toUpperCase()}`}</div>
         </div>
     );
 }

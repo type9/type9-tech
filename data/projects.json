@@ -9,5 +9,27 @@
             "figma": "https://figma.com",
             "github": "https://github.com"
         }
+    },
+    {
+        "id": 2,
+        "title": "PROJECT_NAME_2",
+        "preview_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "media_links": {
+            "medium": "https://medium.com",
+            "figma": "https://figma.com",
+            "github": "https://github.com"
+        }
+    },
+    {
+        "id": 3,
+        "title": "PROJECT_NAME_3",
+        "preview_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "media_links": {
+            "medium": "https://medium.com",
+            "figma": "https://figma.com",
+            "github": "https://github.com"
+        }
     }
 ]}

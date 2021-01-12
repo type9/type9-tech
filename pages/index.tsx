@@ -1,6 +1,7 @@
 import { SecureServerOptions } from 'http2';
 import react, { createContext, useState } from 'react';
 import Head from 'next/head'
+import dynamic from "next/dynamic";
 
 //COMPONENTS
 import { PageContext } from '../components/page_context';
@@ -10,12 +11,26 @@ import Nav from '../components/nav';
 import Header from '../components/header';
 import ProjectSection from '../components/projects_section';
 
+//DYNAMIC IMPORT
+const ReactScrollDetect = dynamic(
+  () => {
+    return import('react-scroll-detect');
+  }, { ssr: false }
+)
+const DetectSection = dynamic(
+  () => {
+    return import('react-scroll-detect').then(module => { // have to manually pull out named export component
+      const { DetectSection } = module;
+      return DetectSection;
+    });
+  }, {ssr: false}
+)
 //STYLES
 import styles from '../styles/Home.module.css';
 
 //DATA
-import sections_data from '../data/sections.json'; //TEMPORARY REPLACEMENT FOR BACKEND
 import projects_data from '../data/projects.json';
+import sections_data from '../data/sections.json';
 
 export default function Index({
   sections
@@ -23,36 +38,49 @@ export default function Index({
   sections: Array<string>
 }) {
 
-  //Page Context - This context is global to all child components but should not effect the parent
-  type section_choices = typeof sections[number] //this type checks to make sure the page is a valid section
-  let section: string; //current section
-  let set_section = (new_section: section_choices) => { //change current section
-    section = new_section;
+  //PAGE CONTEXT - Handles the global context data
+  const [cur, handle_section_change] = useState(0);
+  const [section, set_section] = useState(-1);
+
+  function navigate_to(section: number) { //change current section
+    handle_section_change(section);
+    set_section(section);
   }
+
   let page_state = { //combined state to be passed to nested components
-    section: '00 | NULL',
+    section: cur,
     section_choices: sections,
     set_section: set_section,
+    navigate_to: navigate_to
   }
 
   return (
     <Layout>
       <PageContext.Provider value={page_state}>
         <Header/>
-        <Nav/>
-        <ProjectSection projects={projects_data['projects']}/>
-        <Scroller sections={sections}></Scroller>
+        <div className={styles.content}>
+          <Nav/>
+          <div className={styles.scroller}>
+            <ReactScrollDetect
+              index={section}
+              triggerPoint='center'
+              onChange={handle_section_change}
+            >
+              <DetectSection>
+                <ProjectSection projects={projects_data['projects']}/>
+              </DetectSection>
+            </ReactScrollDetect>
+          </div>
+        </div>
       </PageContext.Provider>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  // Call API for sections
-  //TODO: IMPLEMENT BACKEND. FETCH CALL WOULD GO HERE
   return {
     props: {
-      sections: sections_data['sections'],
+      sections: sections_data['sections']
     },
   }
 }
