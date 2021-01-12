@@ -4,16 +4,18 @@ import Head from 'next/head'
 
 //COMPONENTS
 import { PageContext } from '../components/page_context';
-import Header from '../components/header';
 import Scroller from '../components/scroller';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import Header from '../components/header';
+import ProjectSection from '../components/projects_section';
 
 //STYLES
 import styles from '../styles/Home.module.css';
 
 //DATA
-import sections_data from '../data/sections.json';
+import sections_data from '../data/sections.json'; //TEMPORARY REPLACEMENT FOR BACKEND
+import projects_data from '../data/projects.json';
 
 export default function Index({
   sections
@@ -21,15 +23,14 @@ export default function Index({
   sections: Array<string>
 }) {
 
-  //Page Context
+  //Page Context - This context is global to all child components but should not effect the parent
   type section_choices = typeof sections[number] //this type checks to make sure the page is a valid section
   let section: string; //current section
   let set_section = (new_section: section_choices) => { //change current section
     section = new_section;
-    return null;
   }
   let page_state = { //combined state to be passed to nested components
-    section: section,
+    section: '00 | NULL',
     section_choices: sections,
     set_section: set_section,
   }
@@ -37,11 +38,9 @@ export default function Index({
   return (
     <Layout>
       <PageContext.Provider value={page_state}>
-        <Head>
-            <title>Type9</title>
-        </Head>
-        <Header></Header>
+        <Header/>
         <Nav/>
+        <ProjectSection projects={projects_data['projects']}/>
         <Scroller sections={sections}></Scroller>
       </PageContext.Provider>
     </Layout>
