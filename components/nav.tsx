@@ -17,9 +17,11 @@ function NavItem({
     if(active){ this_style = styles.navitem_active} // applies active styling
 
     return (
-        <li className={this_style} key={name} onClick={() => on_click(index)}>
-            {name.toUpperCase()}
-        </li>
+        <a href={"#" + name}>
+            <li className={this_style} key={name} onClick={() => on_click(index)}>
+                {name.toUpperCase()}
+            </li>
+        </a>
     );
 }
 

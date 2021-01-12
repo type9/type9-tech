@@ -5,11 +5,12 @@ import dynamic from "next/dynamic";
 
 //COMPONENTS
 import { PageContext } from '../components/page_context';
-import Scroller from '../components/scroller';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Header from '../components/header';
 import ProjectSection from '../components/projects_section';
+import AboutMeSection from '../components/aboutme_section';
+import DevBlogSection from '../components/devblog_section';
 
 //DYNAMIC IMPORT
 const ReactScrollDetect = dynamic(
@@ -40,7 +41,7 @@ export default function Index({
 
   //PAGE CONTEXT - Handles the global context data
   const [cur, handle_section_change] = useState(0);
-  const [section, set_section] = useState(-1);
+  const [section, set_section] = useState(0);
 
   function navigate_to(section: number) { //change current section
     handle_section_change(section);
@@ -68,6 +69,12 @@ export default function Index({
             >
               <DetectSection>
                 <ProjectSection projects={projects_data['projects']}/>
+              </DetectSection>
+              <DetectSection>
+                <AboutMeSection/>
+              </DetectSection>
+              <DetectSection>
+                <DevBlogSection/>
               </DetectSection>
             </ReactScrollDetect>
           </div>

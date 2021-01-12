@@ -1,0 +1,51 @@
+.brand {
+    background: #FFFAF2;
+    padding: 0px 30px 0px 30px;
+}
+
+.brand_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand_image {
+    width:100px;
+    margin-right:8px;
+}
+
+.header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1 {
+    display:inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.tagline_container{
+    border-left: 3px solid black;
+    padding-left: 8px;
+    margin: 30px 0px 30px 0px;
+}
+
+.tagline{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: light;
+}
+
+.description_container {
+    padding: 0px 10px 0px 10px;
+}
+.description {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: light;
+}

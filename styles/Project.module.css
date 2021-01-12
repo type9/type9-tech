@@ -2,6 +2,21 @@
     margin-bottom: 100px;
 }
 
+.header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1 {
+    display:inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.projects {
+    margin-top: 100px;
+}
 .header {
     display: flex;
     align-items: center;
@@ -52,7 +67,7 @@
 
 .description_text {
     font-family: 'Roboto', sans-serif;
-    font-size: 14;
+    font-size: 14px;
     letter-spacing: 1px;
     font-weight: light;
 }

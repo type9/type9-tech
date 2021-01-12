@@ -65,7 +65,9 @@ function Project({
                 </div>
                 <hr className={styles.line}/>
             </header>
-            <div className={styles.media}></div>
+            <div className={styles.media}>
+                <iframe src={preview_url} width="600" height="225" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+            </div>
             <div className={styles.description_container}>
                 <p className={styles.description_text}>
                     {description}
@@ -104,6 +106,10 @@ export default function ProjectSection({
     }
     return (
         <div id="projects" className={styles.project_section}>
+            <div className={styles.header_container}>
+                <h1 className={styles.h1}>Projects</h1>
+            </div>
+            <hr></hr>
             <div className={styles.projects}>
                 {populate()}
             </div>
