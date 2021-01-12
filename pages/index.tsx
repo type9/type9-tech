@@ -64,7 +64,7 @@ export default function Index({
         <Header/>
         <div className={styles.content}>
           <Nav/>
-          <div className={styles.scroller}>
+          <div className={scroller_toggle}>
             <ReactScrollDetect
               index={section}
               triggerPoint='center'
