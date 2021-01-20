@@ -1,6 +1,6 @@
 import styles from '../styles/Header.module.css';
 import { useContext } from 'react';
-import { PageContext } from '../components/page_context';
+import { PageContext } from './page_context';
 
 function Brand(){
     return (

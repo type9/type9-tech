@@ -8,24 +8,11 @@ import { PageContext } from '../components/page_context';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Header from '../components/header';
-import ProjectSection from '../components/projects_section';
-import AboutMeSection from '../components/aboutme_section';
-import DevBlogSection from '../components/devblog_section';
+//SECTION COMPONENTS
+import ProjectSection from '../components/index_sections/projects_section';
+import AboutMeSection from '../components/index_sections/aboutme_section';
+import DevBlogSection from '../components/index_sections/devblog_section';
 
-//DYNAMIC IMPORT
-const ReactScrollDetect = dynamic(
-  () => {
-    return import('react-scroll-detect');
-  }, { ssr: false }
-)
-const DetectSection = dynamic(
-  () => {
-    return import('react-scroll-detect').then(module => { // have to manually pull out named export component
-      const { DetectSection } = module;
-      return DetectSection;
-    });
-  }, {ssr: false}
-)
 //STYLES
 import styles from '../styles/Home.module.css';
 
@@ -40,16 +27,14 @@ export default function Index({
 }) {
 
   //PAGE CONTEXT - Handles the global context data
-  const [cur, handle_section_change] = useState(0);
   const [section, set_section] = useState(-1);
 
   function navigate_to(section: number) { //change current section
-    handle_section_change(section);
     set_section(section);
   }
 
   let page_state = { //combined state to be passed to nested components
-    section: cur,
+    section: section,
     section_choices: sections,
     set_section: set_section,
     navigate_to: navigate_to
@@ -65,21 +50,9 @@ export default function Index({
         <div className={styles.content}>
           <Nav/>
           <div className={scroller_toggle}>
-            <ReactScrollDetect
-              index={section}
-              triggerPoint='center'
-              onChange={handle_section_change}
-            >
-              <DetectSection>
-                <ProjectSection projects={projects_data['projects']}/>
-              </DetectSection>
-              <DetectSection>
-                <AboutMeSection/>
-              </DetectSection>
-              <DetectSection>
-                <DevBlogSection/>
-              </DetectSection>
-            </ReactScrollDetect>
+              <ProjectSection projects={projects_data['projects']}/>
+              <AboutMeSection/>
+              <DevBlogSection/>
           </div>
         </div>
       </PageContext.Provider>

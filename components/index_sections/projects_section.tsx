@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 import ReactScrollDetect, { DetectSection } from 'react-scroll-detect';
 
 //STYLES
-import styles from '../styles/Project.module.css';
+import styles from '../../styles/Project.module.css';
 
 //DATA
 

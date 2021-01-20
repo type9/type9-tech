@@ -1,5 +1,5 @@
 //STYLES
-import styles from '../styles/DevBlog.module.css';
+import styles from '../../styles/DevBlog.module.css';
 
 export default function DevBlog(){
     return (

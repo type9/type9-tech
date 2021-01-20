@@ -1,7 +1,7 @@
 //IMPORTS
 
 //STYLES
-import styles from '../styles/AboutMe.module.css';
+import styles from '../../styles/AboutMe.module.css';
 
 function Brand(){
     return (

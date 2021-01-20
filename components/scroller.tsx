@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef  } from 'react';
 
-import { PageContext } from '../components/page_context';
+import { PageContext } from './page_context';
 
 export default function Scroller({
     sections

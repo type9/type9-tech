@@ -1,6 +1,6 @@
 import styles from '../styles/Nav.module.css';
 import { useContext, cloneElement } from 'react';
-import { PageContext } from '../components/page_context';
+import { PageContext } from './page_context';
 import Landing from '../components/landing';
 
 function NavItem({
