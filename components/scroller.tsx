@@ -41,12 +41,14 @@ export default function Scroller({
 }: {
     children
 }){
-    const scroller_ele = useRef();
+    const scroller_ele = useRef(null);
     const page = useContext(PageContext);
 
     useLayoutEffect(() => { //controls if the scroller is visible
         let hide = page.section == -1?  'none' : 'block'
-        scroller_ele.current.style.display = hide
+        if(scroller_ele.current) {
+            scroller_ele.current.style.display = hide;
+        }
     });
 
     function render_children(){
