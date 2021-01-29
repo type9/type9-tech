@@ -1,5 +1,5 @@
 import { SecureServerOptions } from 'http2';
-import react, { createContext, useState } from 'react';
+import react, { createContext, useState, useRef } from 'react';
 import Head from 'next/head'
 import dynamic from "next/dynamic";
 
@@ -8,10 +8,13 @@ import { PageContext } from '../components/page_context';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Header from '../components/header';
-//SECTION COMPONENTS
-import ProjectSection from '../components/index_sections/projects_section';
-import AboutMeSection from '../components/index_sections/aboutme_section';
-import DevBlogSection from '../components/index_sections/devblog_section';
+//SECTION COMPONENTS TODO: Make these imports dynamic
+import ProjectSection from '../components/index/projects_section';
+import AboutMeSection from '../components/index/aboutme_section';
+import DevBlogSection from '../components/index/devblog_section';
+import Scroller from '../components/scroller';
+
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 //STYLES
 import styles from '../styles/Home.module.css';
@@ -25,7 +28,6 @@ export default function Index({
 }: {
   sections: Array<string>
 }) {
-
   //PAGE CONTEXT - Handles the global context data
   const [section, set_section] = useState(-1);
 
@@ -39,9 +41,6 @@ export default function Index({
     set_section: set_section,
     navigate_to: navigate_to
   }
-  
-  let scroller_toggle = styles.scroller //hides scrolling if on landing
-  if(section === -1){scroller_toggle = styles.scroller_hide}
 
   return (
     <Layout>
@@ -49,11 +48,11 @@ export default function Index({
         <Header/>
         <div className={styles.content}>
           <Nav/>
-          <div className={scroller_toggle}>
-              <ProjectSection projects={projects_data['projects']}/>
-              <AboutMeSection/>
-              <DevBlogSection/>
-          </div>
+          <Scroller>
+            <ProjectSection projects={projects_data['projects']}/>
+            <AboutMeSection/>
+            <DevBlogSection/>
+          </Scroller>
         </div>
       </PageContext.Provider>
     </Layout>

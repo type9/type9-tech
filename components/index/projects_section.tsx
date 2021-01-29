@@ -56,7 +56,7 @@ function Project({
     }
 
     return (
-        <section id={"projects_" + title} className={styles.project_container}>
+        <section id={"projects_" + title} className={styles.project_container} key={title}>
             <header className={styles.header}>
                 <div className={styles.foreground}>
                     <div className={styles.barspacer}>

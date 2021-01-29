@@ -8,7 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
+    "i": "^0.3.6",
     "next": "10.0.5",
+    "npm": "^6.14.11",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-scroll-detect": "^1.2.0"
