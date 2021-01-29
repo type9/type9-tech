@@ -14,8 +14,6 @@ import AboutMeSection from '../components/index/aboutme_section';
 import DevBlogSection from '../components/index/devblog_section';
 import Scroller from '../components/scroller';
 
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-
 //STYLES
 import styles from '../styles/Home.module.css';
 
