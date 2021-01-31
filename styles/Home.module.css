@@ -1,8 +1,8 @@
 .content {
   display: flex;
-  justify-content: space-evenly;
-  align-items: normal;
+  justify-content: space-between;
   height: calc(100vh - 122px);
+  padding: 0 8em 0 8em;
 }
 
 .scroller {
@@ -10,6 +10,7 @@
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
   overflow:scroll;
+  scroll-behavior: smooth;
 }
 
 .scroller::-webkit-scrollbar {

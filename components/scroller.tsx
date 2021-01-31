@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, MutableRefObject, useRef, useContext  } from 'react';
+import React, { useEffect, MutableRefObject, useRef, useContext  } from 'react';
 import { PageContext } from './page_context';
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
@@ -31,7 +31,7 @@ function sectionPositionHook({
         [],
         section_ref,
         false,
-        300,
+        150,
         bounding_ref
     );
 };
@@ -44,12 +44,13 @@ export default function Scroller({
     const scroller_ele = useRef(null);
     const page = useContext(PageContext);
 
-    useLayoutEffect(() => { //controls if the scroller is visible
-        let hide = page.section == -1?  'none' : 'block'
-        if(scroller_ele.current) {
-            scroller_ele.current.style.display = hide;
+    useEffect(() => {
+        if(scroller_ele.current){
+            scroller_ele.current.style.display = 
+            page.section === -1 ? 'none' : 'block'
         }
-    });
+    })
+    
 
     function render_children(){
         let section_index = 0;

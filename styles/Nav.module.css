@@ -2,6 +2,11 @@
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
     overflow: scroll;
+
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 .nav_container::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
@@ -15,24 +20,16 @@
 }
 
 .nav_list {
-    height: 143px;
+    height: 9em;
     display:flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    align-items: flex-start;
+
     list-style-type: none;
     margin: 0;
     padding: 0;
     border-left: 3px solid #6D0303;
-}
-
-.navitem_active {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: black;
-    padding-left: 12px;
 }
 
 .navitem {
@@ -41,11 +38,19 @@
     font-weight: 400;
     font-size: 20px;
     letter-spacing: 2px;
+
     color: #6D0303;
+
     padding-left: 12px;
+}
+
+.navitem_active {
+    color: black;
+    padding-left:1em;
 }
 
 .navitem:hover{
     transition-duration: 0.1s;
     color: #2E0101;
+    padding-left:1em;
 }

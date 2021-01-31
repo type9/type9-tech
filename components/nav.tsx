@@ -1,24 +1,23 @@
 import styles from '../styles/Nav.module.css';
-import { useContext, cloneElement } from 'react';
+import { useContext, useRef, cloneElement, useEffect } from 'react';
 import { PageContext } from './page_context';
 import Landing from '../components/landing';
 
 function NavItem({
     name,
-    active,
+    isActive,
     index,
     on_click
 }: {
     name:string,
-    active:boolean,
+    isActive:boolean,
     index:number,
     on_click:(index: number) => void
 }) {
-    let this_style = styles.navitem
-    if(active){ this_style = styles.navitem_active} // applies active styling
+    let style = isActive ? `${styles.navitem} ${styles.navitem_active}` : styles.navitem
 
     return (
-        <li key={name} className={this_style} onClick={() => on_click(index)}>
+        <li key={name} className={style} onClick={() => on_click(index)}>
             <a href={"#" + name}>{name.toUpperCase()}</a>
         </li>
     );
@@ -30,28 +29,22 @@ export default function Nav(){
     function populate_sections(){
         let index = 0; //tracks which section index the link will correspond to
         return page.section_choices.map(section => {
-            let active:boolean = false;
-            if(index === page.section){
-                active = true;
-            }
+            let isActive = page.section === index
             index += 1; //iterates up 1
             return cloneElement(
                 <NavItem
                     name={section}
-                    active={active}
+                    isActive={isActive}
                     on_click={page.navigate_to}
                     index={index - 1} //because we have to iterate before we return, we subtract 1 to maintain accuracy
                 />
             );
         });
     }
-
-    let landing:boolean = true //checks to see if we're on landing page
-    if(page.section >= 0){landing = false};
     return (
         <div className={styles.nav_container}>
             <Landing
-                infocus={landing}
+                inFocus={page.section < 0}
             />
             <nav className={styles.nav}>
                 <ul className={styles.nav_list}>
@@ -59,6 +52,5 @@ export default function Nav(){
                 </ul>
             </nav>  
         </div>
-        
     );
 };

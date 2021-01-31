@@ -1,16 +1,19 @@
 .landing_container {
     width:100%;
-    margin-bottom: 70px;
+    margin-bottom: 4em;
   }
   
 .landing_textbox {
-  height: 280px;
+  height: 20em;
   display:flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   border-left: 3px solid black;
 }
 
+.text_row{
+
+}
 .h2 {
   display: inline-block;
   font-family: 'Inter', sans-serif;
@@ -19,18 +22,17 @@
   letter-spacing: 2px;
   color: black;
   padding-left: 12px;
-  line-height: 34px;
 }
 
 .h2_red {
-  display:inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 28px;
-  letter-spacing: 2px;
   color: #6D0303;
   margin-left: 10px;
-  line-height: 34px;
+  letter-spacing: 2px;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #6D0303; }
 }
 
 .brand_name {

@@ -1,7 +1,10 @@
-.project_container {
-    margin-bottom: 150px;
+.project_section {
+    margin-bottom: 20em;
 }
 
+.project_container {
+    margin-bottom: 5em;
+}
 .header_container {
     display: flex;
     justify-content: center;
