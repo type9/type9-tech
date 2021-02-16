@@ -1,7 +1,4 @@
-import { SecureServerOptions } from 'http2';
 import react, { createContext, useState, useRef } from 'react';
-import Head from 'next/head'
-import dynamic from "next/dynamic";
 
 //COMPONENTS
 import { PageContext } from '../components/page_context';
@@ -41,19 +38,19 @@ export default function Index({
   }
 
   return (
-    <Layout>
-      <PageContext.Provider value={page_state}>
-        <Header/>
-        <div className={styles.content}>
-          <Nav/>
-          <Scroller>
-            <ProjectSection projects={projects_data['projects']}/>
-            <AboutMeSection/>
-            <DevBlogSection/>
-          </Scroller>
-        </div>
-      </PageContext.Provider>
-    </Layout>
+    <PageContext.Provider value={page_state}>
+      <Layout>
+          <Header/>
+          <div className={styles.content}>
+            <Nav/>
+            <Scroller>
+              <ProjectSection projects={projects_data['projects']}/>
+              <AboutMeSection/>
+              <DevBlogSection/>
+            </Scroller>
+          </div>
+      </Layout>
+    </PageContext.Provider>
   );
 }
 

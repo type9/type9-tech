@@ -47,7 +47,7 @@ export default function Scroller({
     useEffect(() => {
         if(scroller_ele.current){
             scroller_ele.current.style.display = 
-            page.section === -1 ? 'none' : 'block'
+                page.section === -1 ? 'none' : 'block'
         }
     })
     
