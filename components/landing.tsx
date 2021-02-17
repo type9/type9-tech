@@ -96,7 +96,7 @@ export default function Landing({inFocus}:{inFocus:boolean}){
             setTimeout(() => {delete_time = deleteSequentially(t1, t2, t3)}, type_time + time_before_delete)
 
             let total_buffer = 2*type_time+ time_before_delete + type_time/2;
-            console.log(total_buffer);
+
             setTimeout(() => animateLanding(
                 s1_bank[randInt(s1_bank.length)],
                 s2_bank[randInt(s2_bank.length)],

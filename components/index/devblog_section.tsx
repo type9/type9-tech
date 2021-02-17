@@ -19,7 +19,10 @@ export default function DevBlog(){
         }
     }
     useEffect(() => {
-        MediumWidget.Init(widget_params);
+        const isBrowser = typeof window !== `undefined`;
+        if(isBrowser){
+            MediumWidget.Init(widget_params);
+        }
     })
 
     return (
