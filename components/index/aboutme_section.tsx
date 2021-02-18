@@ -44,14 +44,14 @@ export default function AboutMeSection(){
                         <a className={styles.contact_link} href="mailto:gabespersonal@gmail.com">gabespersonal@gmail.com</a></dt>
                         <br></br>
                         <dt><b>LinkedIn: </b>
-                        <a className={styles.contact_link} href="https://www.linkedin.com/in/gabrielblee/">GabrielBLee</a></dt>
+                        <a className={styles.contact_link} href="https://www.linkedin.com/in/gabrielblee/" target="_blank" rel="noopener noreferrer">GabrielBLee</a></dt>
                         <br></br>
                         <dt><b>Github: </b>
-                        <a className={styles.contact_link} href="https://github.com/type9">type9</a></dt>
+                        <a className={styles.contact_link} href="https://github.com/type9" target="_blank" rel="noopener noreferrer">type9</a></dt>
                         <br></br>
                     </dl>
                     <dt><b>Resume PDF: </b>
-                        <a className={styles.contact_link} href="https://drive.google.com/file/d/1tAaxh6_zhD8fQkkC8YE6w8TXgtDbh65c/view?usp=sharing">Google Drive</a></dt>
+                        <a className={styles.contact_link} href="https://drive.google.com/file/d/1tAaxh6_zhD8fQkkC8YE6w8TXgtDbh65c/view?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive</a></dt>
                         <br></br>
                 </p>
             </div>
