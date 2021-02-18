@@ -1,5 +1,11 @@
 //IMPORTS
+import dynamic from 'next/dynamic';
 import {useEffect, useRef} from 'react';
+
+let medium;
+if(typeof window !== 'undefined'){
+    medium = require('../../public/scripts/mediumwidget');
+}
 
 //STYLES
 import styles from '../../styles/DevBlog.module.css';
@@ -7,6 +13,7 @@ import styles from '../../styles/DevBlog.module.css';
 export default function DevBlog(){
     const widgetRef = useRef(null);
     let widget_style_path = "/styles/medium_widget.css"
+
     let widget_params = {
         renderTo: '#medium-widget',
         params: {
@@ -18,10 +25,11 @@ export default function DevBlog(){
             "ratio": "landscape"
         }
     }
+
     useEffect(() => {
-        const isBrowser = typeof window !== `undefined`;
-        if(isBrowser){
-            MediumWidget.Init(widget_params);
+        if(medium){
+            console.log(medium);
+            medium.init(widget_params);
         }
     })
 
