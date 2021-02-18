@@ -51,7 +51,7 @@ export default function AboutMeSection(){
                         <br></br>
                     </dl>
                     <dt><b>Resume PDF: </b>
-                        <a className={styles.contact_link} href="https://drive.google.com/file/d/1JME94P17J0Q2xtwip4hG6kNTOEYdY6XZ/view?usp=sharing">Google Drive</a></dt>
+                        <a className={styles.contact_link} href="https://drive.google.com/file/d/1tAaxh6_zhD8fQkkC8YE6w8TXgtDbh65c/view?usp=sharing">Google Drive</a></dt>
                         <br></br>
                 </p>
             </div>
