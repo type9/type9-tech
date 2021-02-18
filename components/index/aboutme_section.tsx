@@ -24,11 +24,35 @@ export default function AboutMeSection(){
             </div>
             <div className={styles.tagline_container}>
                 <p className={styles.tagline}>
-                    I'm an aspiring software engineer from San Francisco. Currently seeking internships for Summer 2021.
+                    Hi, I'm Gabriel Lee, a CS students from San Francisco. I'm seeking internships for Summer 2021.
                 </p>
             </div>
             <div className={styles.description_container}>
-                <p className={styles.description}> &#9; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet feugiat sodales. Donec eget orci vitae lacus malesuada semper non at tellus. Aenean vitae blandit lacus. Quisque pharetra erat quis leo condimentum, ut semper ligula tristique. Aliquam molestie nec urna at consectetur. Donec vel quam velit. Quisque a iaculis ex. Fusce tristique porttitor sapien vel faucibus. Integer rhoncus sed nunc eu aliquam. Fusce sem risus, sollicitudin ac sagittis sit amet, dapibus et erat. Ut erat tellus, volutpat eget cursus in, eleifend vel dui. Fusce nisi metus, pulvinar vitae mauris id, viverra consequat mi. In faucibus lacus ac odio tincidunt volutpat. Cras a sapien odio. Proin odio tortor, sagittis in ornare quis, semper id diam. Vivamus consequat metus quis scelerisque blandit. Praesent nec feugiat ex. Nulla finibus feugiat felis quis condimentum.
+                <p className={styles.description}>
+                    I'm an aspiring software engineer currently attending Dominican University, Make School for Applied Computer Science. I enjoy many aspects of modern software development such as designing UI/UX, implemented unique tech stacks, and applying algorithms for interesting results. Outside of coding, however, I like to graphic design, sketch, and bartend.
+                    <br></br>
+                    <dl>
+                        <dt><b>Front-end:</b> React</dt>
+                        <dt><b>Back-end:</b> Flask, Django, Node</dt>
+                        <dt><b>Databases:</b> MongoDB, SQLite</dt>
+                        <dt><b>Languages:</b> Python, Java, Javascript, Golang</dt>
+                    </dl>
+                    <br></br>
+                    <dl>
+                        <br></br>
+                        <dt><b>Email: </b>
+                        <a className={styles.contact_link} href="mailto:gabespersonal@gmail.com">gabespersonal@gmail.com</a></dt>
+                        <br></br>
+                        <dt><b>LinkedIn: </b>
+                        <a className={styles.contact_link} href="https://www.linkedin.com/in/gabrielblee/">GabrielBLee</a></dt>
+                        <br></br>
+                        <dt><b>Github: </b>
+                        <a className={styles.contact_link} href="https://github.com/type9">type9</a></dt>
+                        <br></br>
+                    </dl>
+                    <dt><b>Resume PDF: </b>
+                        <a className={styles.contact_link} href="https://drive.google.com/file/d/1JME94P17J0Q2xtwip4hG6kNTOEYdY6XZ/view?usp=sharing">Google Drive</a></dt>
+                        <br></br>
                 </p>
             </div>
         </div>

@@ -1,5 +1,5 @@
 .project_section {
-    margin-bottom: 20em;
+    margin-bottom: 15em;
 }
 
 .project_container {
@@ -62,6 +62,17 @@
 .media {
     height:225px;
     border: 0.5px solid #BABABA;
+}
+
+.media > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.media > img:hover {
+    transition-duration: 0.3s;
+    opacity: 0.7;
 }
 
 .description_container{

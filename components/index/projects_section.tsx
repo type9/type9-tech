@@ -11,6 +11,7 @@ interface ProjectTemplate{
     id: number
     title: string
     preview_url: string
+    live_url: string
     description: string
     media_links: {}
 }
@@ -23,7 +24,7 @@ function MediaLink({
     src: string
 }) {
     return (
-        <a href={url} className={styles.media_link}>
+        <a href={url} className={styles.media_link} target="_blank" rel="noopener noreferrer">
             <img src={src} className={styles.media_icon}></img>
         </a>
     );
@@ -32,11 +33,13 @@ function MediaLink({
 function Project({
     title,
     preview_url, //TODO: Implement video preview (either gif or youtube)
+    live_url,
     description,
     media_links
 }: {
     title: string
     preview_url: string
+    live_url: string
     description: string
     media_links: {}
 }){
@@ -65,9 +68,11 @@ function Project({
                 </div>
                 <hr className={styles.line}/>
             </header>
+            <a href={live_url} target="_blank" rel="noopener noreferrer">
             <div className={styles.media}>
-                <iframe src={preview_url} width="600" height="225" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+                <img src={preview_url}></img>
             </div>
+            </a>
             <div className={styles.description_container}>
                 <p className={styles.description_text}>
                     {description}
@@ -79,7 +84,7 @@ function Project({
                 </div>
             </div>
             <div className={styles.readmore_container}>
-                <a href={media_links['medium']}>
+                <a href={media_links['medium']} target="_blank" rel="noopener noreferrer">
                     <p className={styles.readmore_text}>READ MORE &#8594;</p>
                 </a>
             </div>
@@ -100,6 +105,7 @@ export default function ProjectSection({
                     preview_url={project.preview_url}
                     description={project.description}
                     media_links={project.media_links}
+                    live_url={project.live_url}
                 />
             );
         });

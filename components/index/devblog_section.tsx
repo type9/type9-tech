@@ -17,7 +17,7 @@ export default function DevBlog(){
     let widget_params = {
         renderTo: '#medium-widget',
         params: {
-            "resource": "https://medium.com/@gabespersonal",
+            "resource": "https://medium.com/@type9",
             "postsPerLine": 1,
             "limit": 4,
             "picture": "big",

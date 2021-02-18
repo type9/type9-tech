@@ -1,16 +1,17 @@
 .aboutme_section {
-    height: 800px;
+    margin-bottom: 10em;
 }
 
 .brand {
     background: #FFFAF2;
-    padding: 0px 30px 0px 30px;
+    padding: 0px 10em 0px 10em;
 }
 
 .brand_container{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2em 0 2em 0;
 }
 
 .brand_image {
@@ -52,4 +53,8 @@
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: light;
+}
+
+.contact_link {
+    color: #6D0303;
 }
