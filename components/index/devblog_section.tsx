@@ -28,7 +28,6 @@ export default function DevBlog(){
 
     useEffect(() => {
         if(medium){
-            console.log(medium);
             medium.init(widget_params);
         }
     })
