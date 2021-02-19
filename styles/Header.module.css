@@ -30,7 +30,7 @@
 
 .brand {
     background: #FFFAF2;
-    padding: 0px 30px 0px 30px;
+    padding: 0px 1em 0px 1em;
 }
 
 .brand_inner{
@@ -41,7 +41,7 @@
 .brand_image {
     margin:auto;
     display:inline-block;
-    width:35px;
+    width:2em;
     margin-right:8px;
 }
 
