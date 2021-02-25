@@ -1,5 +1,6 @@
 import styles from '../styles/Nav.module.css';
-import { useContext, useRef, cloneElement, useEffect } from 'react';
+import { useState, useContext, cloneElement } from 'react';
+import { useMediaQuery } from 'react-responsive'
 import { PageContext } from './page_context';
 import Landing from '../components/landing';
 
@@ -24,8 +25,16 @@ function NavItem({
 }
 
 export default function Nav(){
+    // const handleMediaQueryChange = (mobileWidth) => {
+    //     const shouldHideNav = !inFocus && mobileWidth;
+    //     if(isHidden == shouldHideNav) return;
+    //     setHidden(shouldHideNav);
+    // }
+    const isMobile = useMediaQuery({maxDeviceWidth: 900});
     const page = useContext(PageContext);
-    
+    let inFocus = page.section < 0
+    const shouldHideNav = !inFocus && isMobile;
+
     function populate_sections(){
         let index = 0; //tracks which section index the link will correspond to
         return page.section_choices.map(section => {
@@ -41,10 +50,11 @@ export default function Nav(){
             );
         });
     }
+
     return (
-        <div className={styles.nav_container}>
+        <div className={styles.nav_container} style={{display: shouldHideNav? 'none': 'flex'}}>
             <Landing
-                inFocus={page.section < 0}
+                inFocus={inFocus}
             />
             <nav className={styles.nav}>
                 <ul className={styles.nav_list}>

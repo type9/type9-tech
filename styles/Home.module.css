@@ -1,7 +1,7 @@
 .content {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 3.6em);
+  height: calc(100vh - 59px);
   padding: 0 8em 0 8em;
   max-width: 80em;
 }
@@ -16,4 +16,10 @@
 
 .scroller::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
+}
+
+@media (max-width: 900px){
+  .content{
+    padding: 0 2em 0 2em;
+  }
 }

@@ -87,7 +87,7 @@ export default function Landing({inFocus}:{inFocus:boolean}){
         let s3_bank = ["DIGITAL_EXPERIENCES", "DYNAMIC_DESIGN", "DATA_VISUALIZATION"]
         let s1 = "GABRIEL";
         let s2 = "CS_STUDENT";
-        let s3 = "CODING";
+        let s3 = "PROGRAMMING";
 
         function animateLanding(s1, s2, s3){
             if(!(t1.current && t2.current && t3.current) && inFocus){return}
