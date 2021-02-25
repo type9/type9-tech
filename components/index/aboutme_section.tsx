@@ -24,7 +24,7 @@ export default function AboutMeSection(){
             </div>
             <div className={styles.tagline_container}>
                 <p className={styles.tagline}>
-                    Hi, I'm Gabriel Lee, a CS students from San Francisco. I'm seeking internships for Summer 2021.
+                    Hi, I'm Gabriel Lee, a CS student from San Francisco. I'm seeking internships for Summer 2021.
                 </p>
             </div>
             <div className={styles.description_container}>
