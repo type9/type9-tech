@@ -25,11 +25,6 @@ function NavItem({
 }
 
 export default function Nav(){
-    // const handleMediaQueryChange = (mobileWidth) => {
-    //     const shouldHideNav = !inFocus && mobileWidth;
-    //     if(isHidden == shouldHideNav) return;
-    //     setHidden(shouldHideNav);
-    // }
     const isMobile = useMediaQuery({maxDeviceWidth: 900});
     const page = useContext(PageContext);
     let inFocus = page.section < 0
