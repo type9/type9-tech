@@ -1,4 +1,3 @@
-import { resolveTxt } from 'dns';
 import {useLayoutEffect, useRef} from 'react';
 import styles from '../styles/Landing.module.css';
 
