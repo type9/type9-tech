@@ -81,6 +81,7 @@
 }
 
 .description_text {
+    line-height: 200%;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
