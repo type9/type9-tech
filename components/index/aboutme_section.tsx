@@ -24,12 +24,12 @@ export default function AboutMeSection(){
             </div>
             <div className={styles.tagline_container}>
                 <p className={styles.tagline}>
-                    Hi, I'm Gabriel Lee, a CS student from San Francisco. I'm seeking internships for Summer 2021.
+                    Hi, I'm Gabriel Lee, a CS student from San Francisco.
                 </p>
             </div>
             <div className={styles.description_container}>
                 <p className={styles.description}>
-                    I'm an aspiring software engineer currently attending Dominican University, Make School for Applied Computer Science. I enjoy many aspects of modern software development such as designing UI/UX, implemented unique tech stacks, and applying algorithms for interesting results. Outside of coding, however, I like to graphic design, sketch, and bartend.
+                    I'm an aspiring software engineer currently attending Dominican University for Applied Computer Science. I enjoy many aspects of modern software development such as designing UI/UX, implemented unique tech stacks, and applying algorithms for interesting results. Outside of coding, however, I like to graphic design, sketch, and bartend.
                     <br></br>
                     <dl>
                         <dt><b>Front-end:</b> React</dt>
