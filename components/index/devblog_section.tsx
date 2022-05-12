@@ -3,9 +3,9 @@ import dynamic from 'next/dynamic';
 import {useEffect, useRef} from 'react';
 
 let medium;
-if(typeof window !== 'undefined'){
-    medium = require('../../public/scripts/mediumwidget');
-}
+// if(typeof window !== 'undefined'){
+//     medium = require('../../public/scripts/mediumwidget');
+// }
 
 //STYLES
 import styles from '../../styles/DevBlog.module.css';
